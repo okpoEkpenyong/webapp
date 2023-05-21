@@ -21,6 +21,14 @@ steps:
   inputs:
     restoreSolution: '$(solution)'
 
+# install 6.0.x SDK for building
+- task: UseDotNet@2
+  displayName: 'Install .NET Core SDK'
+  inputs:
+    version: 6.x
+    performMultiLevelLookup: true # install newer SDK
+    includePreviewVersions: true # Required for preview versions
+
 - task: VSBuild@1
   inputs:
     solution: '$(solution)'
