@@ -58,3 +58,9 @@ steps:
 #   inputs:
 #     platform: '$(buildPlatform)'
 #     configuration: '$(buildConfiguration)'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Microsoft Azure Sponsorship(cfe26bb0-dc20-4662-8531-4f38d80c18ad)'
+    appType: 'webAppLinux'
+    appName: 'MyAzurePortalWebApp01'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
